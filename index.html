@@ -1,55 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Homeworks Hillel</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homeworks Hillel</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="My.css">
+    <link rel="stylesheet" href="my.css">
 </head>
 <body>
-<div class="container mt-5 ">
-
-  <button class="btn btn-primary btn-push mb-3" id="openModalBtn">Нажми меня</button>
-
-
-  <div class="modal__window border border-dark border-opacity-50 ">
-    <div class="modal__window-content bg-light p-4 rounded shadow">
-      <div class="modal__window-header mb-3 d-flex justify-content-between align-items-center border-bottom border-opacity-90">
-        <h1 class="modal__window-title">Ваше задание</h1>
-        <button class="btn btn-link" id="closeModalBtn">
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </div>
-      <div class="modal__window-body mb-3 border-bottom border-opacity-90 ">
-        <ul class="content">
-          <li>Buy milk</li>
-          <li>Buy milk</li>
-          <li>Buy milk</li>
-        </ul>
-      </div>
-      <div class="modal__window-footer mt-4 text-right ">
-        <button class="btn btn-primary modal__window-button" id="closeModalBtnFooter">Закрыть</button>
-      </div>
-    </div>
-  </div>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">ToDoList</h1>
+    <form class="row g-3 js--form">
+        <div class="col-md-9">
+            <input type="text" name="value" required class="form-control js--form__input" placeholder="Введите задачу">
+        </div>
+        <div class="col-md-3 d-grid">
+            <button type="submit" class="btn btn-success">Додати</button>
+        </div>
+    </form>
+    <ul class="list-group mt-4 js--todos-wrapper">
+        <li class="list-group-item d-flex align-items-center justify-content-between">
+            <input type="checkbox" class="form-check-input">
+            <span class="ms-2 todo-item__description">Text</span>
+            <button class="btn btn-danger btn-sm">Видалити</button>
+        </li>
+        <li class="list-group-item d-flex align-items-center justify-content-between todo-item--checked">
+            <input type="checkbox" class="form-check-input" checked>
+            <span class="ms-2 todo-item__description">Text</span>
+            <button class="btn btn-danger btn-sm">Видалити</button>
+        </li>
+    </ul>
 </div>
-<ul class="list">
-  <li>1</li>
-  <li>1</li>
-  <li>1</li>
-</ul>
-<button class="show">show</button>
-<button class="hide">hide</button>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<div class="modal show" id="todoModal" tabindex="-1" aria-labelledby="todoModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="todoModalLabel">Деталі завдання</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="todoDetails">Це приклад тексту завдання.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="module" src="My.js"></script>
 </body>
 </html>
