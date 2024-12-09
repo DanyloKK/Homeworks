@@ -7,6 +7,7 @@ $(document).ready(function () {
     const body = $("body");
     const modalTask = $("#todoDetails")
     const buttonClose = $(".btn-close");
+    const container = $(".container");
     $(form).on("submit", function (e) {
         e.preventDefault();
         let inputValue = inputForm.val();
@@ -31,11 +32,15 @@ $(document).ready(function () {
                 $(body).addClass("background");
                 const textSpan = createSpan.text();
                 $(modalTask).text(textSpan);
+                $(container).addClass("style")
                 $(buttonClose).on("click", function () {
                     $(modal).removeClass("modal-show");
+                    $(body).removeClass("background");
+                    $(container).removeClass("style")
                 })
             })
         }
     });
 
 })
+
